@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:ns="http://softeng.unifr.ch/REST/generator/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://wadl.dev.java.net/2009/02 http://www.w3.org/Submission/wadl/wadl.xsd">
+	<grammars>
+		<include href="caramel-machine-jaxb.xsd"/>
+	</grammars>
+	<resources base="http://localhost:9090/mySystem/">
+		<resource id="com.example.lightbulb.resources.CaramelDeviceResource" path="/caramel-factory">
+			<method id="getCaramelDeviceResourceXML" name="GET">
+				<response>
+					<representation mediaType="application/xml"/>
+					<representation mediaType="application/json"/>
+					<representation mediaType="text/xml"/>
+				</response>
+			</method>
+		</resource>
+		<resource id="com.example.lightbulb.resources.OverflowContextResource" path="/caramel-factory/overflow">
+			<method id="getOverflowContextResourceXML" name="GET">
+				<response>
+					<representation mediaType="application/xml"/>
+					<representation mediaType="application/json"/>
+					<representation mediaType="text/xml"/>
+				</response>
+			</method>
+			<method id="putOverflowContextResourceXML" name="PUT">
+				<response>
+					<representation mediaType="application/xml"/>
+					<representation mediaType="application/json"/>
+					<representation mediaType="text/xml"/>
+				</response>
+			</method>
+		</resource>
+		<resource id="com.example.lightbulb.resources.OverflowPublisherResource" path="/caramel-factory/overflow/pub">
+			<method id="getOverflowClientsListResourceXML" name="GET">
+				<response>
+					<representation mediaType="application/xml"/>
+					<representation mediaType="application/json"/>
+					<representation mediaType="text/xml"/>
+				</response>
+			</method>
+                        <resource path="/{uri: [a-zA-Z0-9_.:\\-/]+}">
+                            <method id="putOverflowClientResourceXML" name="PUT">
+                                    <response>
+                                            <representation mediaType="application/xml"/>
+                                            <representation mediaType="application/json"/>
+                                            <representation mediaType="text/xml"/>
+                                    </response>
+                            </method>
+                            <method id="getOverflowClientResourceXML" name="GET">
+                                    <response>
+                                            <representation mediaType="application/xml"/>
+                                            <representation mediaType="application/json"/>
+                                            <representation mediaType="text/xml"/>
+                                    </response>
+                            </method>
+                            <method id="deleteOverflowClientResourceXML" name="DELETE">
+                                    <response>
+                                            <representation mediaType="application/xml"/>
+                                            <representation mediaType="application/json"/>
+                                            <representation mediaType="text/xml"/>
+                                    </response>
+                            </method>
+                        </resource>
+		</resource>
+		<resource id="com.example.lightbulb.resources.WhipServoResource" path="/caramel-factory/whip">
+			<method id="putWhipServoResourceXML" name="PUT">
+				<response>
+					<representation mediaType="application/xml"/>
+					<representation mediaType="application/json"/>
+					<representation mediaType="text/xml"/>
+				</response>
+			</method>
+		</resource>
+		<resource id="com.example.lightbulb.resources.LuminositySensorResource" path="/caramel-factory/check-finish">
+			<method id="getLuminositySensorResourceXML" name="GET">
+				<response>
+					<representation mediaType="application/xml"/>
+					<representation mediaType="application/json"/>
+					<representation mediaType="text/xml"/>
+				</response>
+			</method>
+		</resource>
+		<resource id="com.example.lightbulb.resources.LuminositySensorPublisherResource" path="/caramel-factory/check-finish/pub">
+			<method id="getClientsListCheckFinishResourceXML" name="GET">
+				<response>
+					<representation mediaType="application/xml"/>
+					<representation mediaType="application/json"/>
+					<representation mediaType="text/xml"/>
+				</response>
+			</method>
+                        <resource path="/{uri: [a-zA-Z0-9_.:\\-/]+}">
+                            <method id="putClientCheckFinishResourceXML" name="PUT">
+                                    <response>
+                                            <representation mediaType="application/xml"/>
+                                            <representation mediaType="application/json"/>
+                                            <representation mediaType="text/xml"/>
+                                    </response>
+                            </method>
+                            <method id="getClientCheckFinishResourceXML" name="GET">
+                                    <response>
+                                            <representation mediaType="application/xml"/>
+                                            <representation mediaType="application/json"/>
+                                            <representation mediaType="text/xml"/>
+                                    </response>
+                            </method>
+                            <method id="deleteClientCheckFinishResourceXML" name="DELETE">
+                                    <response>
+                                            <representation mediaType="application/xml"/>
+                                            <representation mediaType="application/json"/>
+                                            <representation mediaType="text/xml"/>
+                                    </response>
+                            </method>
+                        </resource>
+		</resource>
+		<resource id="com.example.lightbulb.resources.HeatContextResource" path="/caramel-factory/heat">
+			<method id="getHeatContextResourceXML" name="GET">
+				<response>
+					<representation mediaType="application/xml"/>
+					<representation mediaType="application/json"/>
+					<representation mediaType="text/xml"/>
+				</response>
+			</method>
+			<method id="putHeatContextResourceXML" name="PUT">
+				<response>
+					<representation mediaType="application/xml"/>
+					<representation mediaType="application/json"/>
+					<representation mediaType="text/xml"/>
+				</response>
+			</method>
+		</resource>
+		<resource id="com.example.lightbulb.resources.HeatPublisherResource" path="/caramel-factory/heat/pub">
+			<method id="getHeatClientsListResourceXML" name="GET">
+				<response>
+					<representation mediaType="application/xml"/>
+					<representation mediaType="application/json"/>
+					<representation mediaType="text/xml"/>
+				</response>
+			</method>
+                        <resource path="/{uri: [a-zA-Z0-9_.:\\-/]+}">
+                            <method id="putHeatClientResourceXML" name="PUT">
+                                    <response>
+                                            <representation mediaType="application/xml"/>
+                                            <representation mediaType="application/json"/>
+                                            <representation mediaType="text/xml"/>
+                                    </response>
+                            </method>
+                            <method id="getHeatClientResourceXML" name="GET">
+                                    <response>
+                                            <representation mediaType="application/xml"/>
+                                            <representation mediaType="application/json"/>
+                                            <representation mediaType="text/xml"/>
+                                    </response>
+                            </method>
+                            <method id="deleteHeatClientResourceXML" name="DELETE">
+                                    <response>
+                                            <representation mediaType="application/xml"/>
+                                            <representation mediaType="application/json"/>
+                                            <representation mediaType="text/xml"/>
+                                    </response>
+                            </method>
+                        </resource>
+		</resource>
+	</resources>
+</application>

@@ -1,0 +1,16 @@
+nb-configuration.xml
+derby.log
+
+target/
+bin/
+gen/
+nbproject/
+reports/
+dist/
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0" xmlns:tns="http://jaxb.xwot.caramel-factory.ch.unifr.diuf" targetNamespace="http://jaxb.xwot.caramel-factory.ch.unifr.diuf">
+    
+    <xs:annotation>
+        <xs:appinfo>
+            <jaxb:globalBindings>
+                <jaxb:javaType name="java.net.URI" xmlType="xs:anyURI" parseMethod="create" printMethod="toASCIIString"/>
+                <jaxb:javaType name="java.util.Calendar" xmlType="xs:dateTime" parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime" printMethod="javax.xml.bind.DatatypeConverter.printDateTime"/>
+            </jaxb:globalBindings>
+            <jaxb:bindings>
+                <jaxb:bindings node="//xs:element[@name='whip']/xs:complexType/xs:sequence/xs:element[@name='speed']/xs:simpleType">
+                    <jaxb:typesafeEnumClass name="Speed"/>
+                </jaxb:bindings>
+            </jaxb:bindings>
+            <jaxb:bindings>
+                <jaxb:bindings node="//xs:element[@name='heat']/xs:complexType/xs:sequence/xs:element[@name='thermostat']/xs:simpleType">
+                    <jaxb:typesafeEnumClass name="Thermostats"/>
+                </jaxb:bindings>
+            </jaxb:bindings>
+        </xs:appinfo>
+    </xs:annotation>
+    <xs:element name="factory">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="listOfDevices">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="tns:whip"/>
+                            <xs:element ref="tns:heat"/>
+                            <xs:element ref="tns:caramel"/>
+                            <xs:element ref="tns:overflow"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="whip">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="speed">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="NULL"/>
+                            <xs:enumeration value="FULL"/>
+                            <xs:enumeration value="TURBO"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="uri" type="xs:anyURI" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="heat">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="thermostat">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="NULL"/>
+                            <xs:enumeration value="MIDDLE"/>
+                            <xs:enumeration value="FULL"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="temperature" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="unit">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="CELSIUS"></xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="uri" type="xs:anyURI" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="caramel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ready" type="xs:boolean"/>
+            </xs:sequence>
+            <xs:attribute name="uri" type="xs:anyURI" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="overflow">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isOverflowing" type="xs:boolean" minOccurs="0"/>
+                <xs:element name="isPutAway" type="xs:boolean"/>
+            </xs:sequence>
+            <xs:attribute name="uri" type="xs:anyURI" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="client">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="uri" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
